@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO METADATA & FAVICON -->
+<title>Free Online Horror Games - Play Scary HTML5 & Spooky Browser Games | Elky Games</title>
+<meta name="description" content="Play the scariest free online horror games on Elky Games Hub! Dive into creepy survival horror, jump scares, spooky puzzles, and dark HTML5 browser games. Instant play on mobile & PC — no downloads required!">
+<meta name="keywords" content="Elky Games Horror, Free Horror Games, Scary Online Games, Spooky HTML5 Games, Play Horror Games, Browser Horror Games, Jump Scare Games, Creepy Web Games, Survival Horror Online, Unblocked Horror Games, Dark Puzzle Games, Escape Room Games, Haunted House Games, Online Ghost Games, Mobile Horror Games, Scary Browser Games, Instant Horror Games">
+
+<!-- Open Graph / Social Media Tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play Free Online Horror Games | Elky Games Hub">
+<meta property="og:description" content="Face your fears with the best free online HTML5 horror games. Spooky, creepy, and terrifying browser games ready for instant play!">
+<meta property="og:url" content="https://elkygames.com/horror">
+<meta property="og:site_name" content="Elky Games">
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scariest Free Online Horror Games - Elky Games">
+<meta name="twitter:description" content="Test your courage with top HTML5 scary games, survival horrors, and spooky adventures. No installation needed!">
+
+
+    <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/upz9iP7qKdGHdrLYgtkq6Dkkj4QQ4m2Pc6x1qU8qn2pMOyLIMP1UJfV-ATLN3JaIwu_HaRXdlpiC1HRBaDRgiw=w240-h480-rw">
+
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Elky Games",
+  "url": "https://elkygames.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://elkygames.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Elky Games",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://elkygames.com/image.png"
+    }
+  }
+}
+</script>
+
+    <!-- Google Fonts: Inter & Aladin -->
+    <link href="https://fonts.googleapis.com/css2?family=Butcherman&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==================== GLOBAL VARIABLES & STYLES ==================== */
+        :root {
+            --primary-bg: #09090b;
+            --secondary-bg: #121215;
+            --card-bg: #1a1a1e;
+            --accent-color: #ff0055;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0ab;
+            --border-color: #27272a;
+            --star-color: #FFC107;
+            --cyan-highlight: #00E5FF;
+            --gold-highlight: #FFD700;
+            --details-bg: #2b1845;
+            --purple-button: #8b3dff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg); 
+            background-image: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.85)), url('https://i.ytimg.com/vi/N6_m0GQF8m4/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==================== STICKY SIDE ADS (LEFT & RIGHT) ==================== */
+        .sticky-side-ad {
+            position: fixed;
+            top: 80px;
+            width: 160px;
+            height: 600px;
+            background-color: var(--secondary-bg);
+            border: 1px dashed var(--border-color);
+            border-radius: 12px;
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+            overflow: hidden;
+        }
+        .left-sticky-ad { left: 10px; }
+        .right-sticky-ad { right: 10px; }
+
+        @media (max-width: 1600px) {
+            .sticky-side-ad { display: none; } /* छोटी स्क्रीन्स पर ऑटोमैटिक हाइड होगा ताकि गेम्स पर असर न पड़े */
+        }
+
+        /* ==================== NAVBAR & COLORFUL ANIMATIONS ==================== */
+        .navbar {
+            background-color: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            gap: 12px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .settings-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .settings-btn:hover {
+            border-color: var(--cyan-highlight);
+            color: var(--cyan-highlight);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+            transform: scale(1.08) rotate(5deg);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.03);
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .brand-logo:hover .brand-icon {
+            border-color: var(--cyan-highlight);
+        }
+
+        .brand-title {
+            font-family: 'Aladin', cursive;
+            font-size: 32px;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        .brand-title .c1 { font-family: 'Aladin', cursive; color: #FF2A6D; }
+        .brand-title .c2 { font-family: 'Aladin', cursive; color: #05D9E8; }
+        .brand-title .c3 { font-family: 'Aladin', cursive; color: #00F5D4; }
+        .brand-title .c4 { font-family: 'Aladin', cursive; color: #FFB703; }
+        .brand-title .hub-text {
+            font-family: 'Aladin', cursive;
+            font-size: 28px;
+            font-weight: 400;
+            background: linear-gradient(45deg, #FF007A, #9600FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 6px;
+        }
+
+        .search-view-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-grow: 1;
+            max-width: 460px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            background-color: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            color: var(--text-primary);
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-container input:focus {
+            border-color: #05D9E8;
+            box-shadow: 0 0 12px rgba(5, 217, 232, 0.4);
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .view-toggle-box {
+            display: flex;
+            background-color: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 3px;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+
+        .view-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 18px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn.active {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 0, 85, 0.6);
+        }
+
+        .view-btn:hover:not(.active) {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        .icon-filter-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .icon-filter-btn:hover, .icon-filter-btn.active {
+            transform: translateY(-3px) scale(1.08);
+            border-color: currentColor;
+            box-shadow: 0 4px 15px currentColor;
+        }
+
+        .btn-latest { color: #00E5FF; }
+        .btn-popular { color: #FF2A6D; }
+        .btn-random { color: #FFB703; }
+        .btn-liked { color: #FF0055; }
+        .btn-history { color: #00F5D4; }
+        .btn-pages { color: #9D50FF; }
+
+        /* PLAY STORE BUTTON WITH PULSE ANIMATION */
+        .playstore-nav-btn {
+            background: linear-gradient(135deg, #01d679, #008f4c);
+            color: #ffffff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(1, 214, 121, 0.4);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: playpulse 2s infinite;
+        }
+
+        @keyframes playpulse {
+            0% { box-shadow: 0 0 0 0 rgba(1, 214, 121, 0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(1, 214, 121, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(1, 214, 121, 0); }
+        }
+
+        .playstore-nav-btn:hover { 
+            transform: scale(1.12) rotate(-5deg); 
+            box-shadow: 0 0 20px rgba(1, 214, 121, 0.8);
+        }
+
+        /* ==================== MOBILE RESPONSIVE NAVBAR LAYOUT ==================== */
+        @media (max-width: 768px) {
+            .navbar {
+                display: grid;
+                grid-template-columns: 42px 1fr auto;
+                grid-template-rows: auto auto;
+                gap: 10px;
+                padding: 10px 12px;
+            }
+
+            .nav-left { grid-column: 1; grid-row: 1; }
+            .brand-logo { grid-column: 2; grid-row: 1; justify-self: center; }
+            .nav-right-actions { grid-column: 3; grid-row: 1; flex-direction: row; gap: 6px; }
+            .icon-filter-btn { display: none; }
+            .icon-filter-btn.btn-pages { display: flex; }
+
+            .search-view-wrapper {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                max-width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ==================== DRAWERS & POP-UPS ==================== */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 200;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .settings-drawer {
+            position: fixed;
+            top: 0;
+            left: -340px;
+            width: 320px;
+            height: 100%;
+            background-color: var(--secondary-bg);
+            border-right: 1px solid var(--border-color);
+            z-index: 201;
+            padding: 20px;
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow-y: auto;
+        }
+        .settings-drawer.open { left: 0; }
+
+        /* CENTER POPUP MODAL FOR PLAY STORE (UPDATED DESIGN) */
+        .playstore-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 300;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .playstore-modal-box {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 580px;
+            max-height: 85vh;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 229, 255, 0.2);
+            animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .playstore-header-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        /* PLAYSTORE APPS CONTAINER - SINGLE COLUMN HORIZONTAL LIST */
+        .playstore-app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+            overflow-y: auto;
+            padding-right: 4px;
+            max-height: 60vh;
+        }
+
+        /* PLAYSTORE APP CARD - SINGLE ROW HORIZONTAL LAYOUT */
+        .playstore-app-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: left;
+        }
+
+        .playstore-app-card:hover {
+            border-color: #01d679;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(1, 214, 121, 0.25);
+        }
+
+        .playstore-app-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            flex-shrink: 0;
+        }
+
+        .playstore-app-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .playstore-app-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .playstore-app-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 3px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .playstore-download-btn {
+            background: linear-gradient(135deg, #01d679, #008f4c);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .playstore-download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 14px rgba(1, 214, 121, 0.6);
+        }
+
+        @media (max-width: 480px) {
+            .playstore-app-card {
+                padding: 10px 12px;
+                gap: 10px;
+            }
+            .playstore-app-icon {
+                width: 48px;
+                height: 48px;
+            }
+            .playstore-app-title {
+                font-size: 13px;
+            }
+            .playstore-app-desc {
+                font-size: 11px;
+            }
+            .playstore-download-btn {
+                padding: 8px 10px;
+                font-size: 11px;
+            }
+        }
+
+        /* PAGES POPUP MODAL */
+        .pages-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 300;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pages-modal-box {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 420px;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .close-popup-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .close-popup-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .pages-modal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .pages-modal-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .pages-modal-item:hover {
+            border-color: var(--cyan-highlight);
+            background: var(--primary-bg);
+            color: var(--cyan-highlight);
+            transform: translateX(6px);
+            box-shadow: -4px 0 12px rgba(0, 229, 255, 0.3);
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--cyan-highlight);
+        }
+
+        .drawer-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .drawer-action-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-action-btn:hover {
+            border-color: var(--cyan-highlight);
+            background: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        .drawer-category-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .drawer-category-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-category-item:hover,
+        .drawer-category-item.active-category {
+            border-color: var(--gold-highlight);
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--gold-highlight);
+            transform: translateX(4px);
+        }
+
+        .drawer-category-count {
+            background: var(--primary-bg);
+            color: var(--cyan-highlight);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 800;
+            border: 1px solid var(--border-color);
+        }
+
+        /* ==================== CONTAINER & CATEGORIES BAR ==================== */
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 10px auto 20px auto;
+            padding: 0 15px;
+            flex: 1;
+            overflow-x: hidden;
+        }
+
+        .categories-bar {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            scrollbar-width: thin;
+        }
+
+        .category-chip {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .category-chip.active, .category-chip:hover {
+            background-color: var(--gold-highlight);
+            color: #000000;
+            border-color: var(--gold-highlight);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== GAMES GRID (UPDATED NO MARGIN ON MOBILE) ==================== */
+        .games-grid {
+            display: grid;
+            gap: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0px 50px;
+        }
+
+        /* DESKTOP & TABLET BREAKPOINTS */
+        .games-grid.icon-mode { grid-template-columns: repeat(8, 1fr); }
+        @media (max-width: 1200px) { .games-grid.icon-mode { grid-template-columns: repeat(4, 1fr); } }
+        @media (max-width: 900px) { .games-grid.icon-mode { grid-template-columns: repeat(3, 1fr); } }
+
+        .games-grid.cover-mode { grid-template-columns: repeat(5, 1fr); }
+        @media (max-width: 1200px) { .games-grid.cover-mode { grid-template-columns: repeat(5, 1fr); } }
+        @media (max-width: 900px) { .games-grid.cover-mode { grid-template-columns: repeat(3, 1fr); } }
+
+        .icon-mode .card-thumbnail-wrapper { aspect-ratio: 1 / 1; }
+        .cover-mode .card-thumbnail-wrapper { aspect-ratio: 16 / 9; }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+            transform-origin: center center;
+            max-width: 100%;
+        }
+
+        .cover-mode .game-card:hover {
+            transform: scale(1.18);
+            border-color: #05D9E8;
+            z-index: 99;
+            box-shadow: 0 10px 25px rgba(5, 217, 232, 0.4);
+        }
+
+        .icon-mode .game-card:hover {
+            transform: translateY(-4px);
+            border-color: #05D9E8;
+            box-shadow: 0 6px 18px rgba(5, 217, 232, 0.3);
+        }
+
+        .card-thumbnail-wrapper {
+            width: 100%;
+            position: relative;
+            background-color: var(--secondary-bg);
+            overflow: hidden;
+        }
+
+        .card-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .card-hover-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            display: none;
+        }
+
+        /* CARD DETAILS & TITLE ALIGNMENT */
+        .card-details {
+            padding: 10px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+            background-color: var(--card-bg);
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            width: 100%;
+        }
+
+        .card-submeta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .card-badge {
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            max-width: 35%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+
+        .card-views {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            justify-content: center;
+        }
+
+        .card-like-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            transition: all 0.2s ease;
+            padding: 0 2px;
+        }
+
+        .card-like-btn:hover {
+            transform: scale(1.2);
+            color: #ff0055;
+        }
+
+        .card-like-btn.liked {
+            color: #ff0055;
+        }
+
+        /* MOBILE SPECIFIC NO MARGIN FIT RULES */
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 4px;
+            }
+
+            .games-grid {
+                padding: 0px 2px !important;
+                gap: 6px !important;
+            }
+
+            .games-grid.icon-mode { 
+                grid-template-columns: repeat(3, 1fr) !important; 
+            }
+            .games-grid.cover-mode { 
+                grid-template-columns: repeat(2, 1fr) !important; 
+            }
+
+            .card-details { 
+                padding: 6px 4px; 
+                gap: 4px;
+            }
+            
+            .card-title { 
+                font-size: 10px; 
+            }
+
+            .card-submeta {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                width: 100%;
+            }
+
+            .card-badge {
+                font-size: 8px;
+                padding: 1px 5px;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .card-bottom-row-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .card-views {
+                font-size: 9px;
+            }
+
+            .card-like-btn {
+                font-size: 11px;
+            }
+
+            .cover-mode .game-card:hover {
+                transform: scale(1.03) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+            }
+            .random-card:hover {
+                transform: scale(1.03) !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important;
+            }
+        }
+
+        /* ==================== GAME DETAILS SCREEN ==================== */
+        .details-screen { display: none; }
+
+        .back-btn {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            border-color: var(--cyan-highlight);
+            color: var(--cyan-highlight);
+            transform: translateX(-4px);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+
+        .details-top-banner {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .hero-purple-box {
+            background: #0d0d12;
+            border-radius: 18px;
+            padding: 0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero-bg-blur {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(16px) brightness(0.4);
+            transform: scale(1.15);
+            z-index: 0;
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-cover-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 18px 18px 0 0;
+            overflow: hidden;
+            position: relative;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            padding: 20px 0;
+        }
+
+        .hero-cover-img {
+            max-width: 60%;
+            max-height: 55%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-iframe-embed {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+            z-index: 10;
+        }
+
+        .hero-play-btn {
+            margin-top: 15px;
+            background-color: var(--purple-button);
+            color: #ffffff;
+            border: none;
+            padding: 12px 42px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(139, 61, 255, 0.6);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 5;
+        }
+
+        .hero-play-btn:hover {
+            transform: scale(1.08);
+            background-color: #9d50ff;
+            box-shadow: 0 8px 25px rgba(157, 80, 255, 0.8);
+        }
+
+        .hero-bottom-info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0 !important;
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0 0 18px 18px;
+            flex-wrap: nowrap;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .hero-info-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .hero-game-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            flex-shrink: 0;
+        }
+
+        .hero-title-text {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffffff;
+            white-space: normal;
+            word-break: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title-text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 120px;
+            }
+        }
+
+        .hero-category-text {
+            font-size: 11px;
+            color: #bfa8e6;
+            font-weight: 600;
+        }
+
+        .hero-info-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .detail-action-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .detail-action-icon:hover, .detail-action-icon.liked {
+            background: rgba(255, 0, 85, 0.2);
+            color: #ff0055;
+            border-color: #ff0055;
+            transform: scale(1.1);
+        }
+
+        .fullscreen-btn-inline {
+            background: linear-gradient(135deg, #00E5FF, #008F4C);
+            color: #fff;
+            border: none;
+            padding: 0 14px;
+            height: 38px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
+            flex-shrink: 0;
+        }
+
+        .fullscreen-btn-inline:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+        }
+
+        .detail-stats-pill {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .fullscreen-btn-inline .fs-text { display: none; }
+            .fullscreen-btn-inline {
+                width: 38px;
+                padding: 0;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            .player-text-label { display: none; }
+            .hero-cover-img {
+                max-width: 80%;
+                max-height: 60%;
+            }
+        }
+
+        /* MID RELATED GAMES LIST */
+        .mid-games-wrapper { margin: 20px 0; }
+
+        .mid-games-grid-row1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        @media (min-width: 500px) { .mid-games-grid-row1 { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 900px) { .mid-games-grid-row1 { grid-template-columns: repeat(8, 1fr); } }
+
+        .mid-games-grid-row2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media (min-width: 600px) { .mid-games-grid-row2 { grid-template-columns: repeat(4, 1fr); } }
+
+        .random-card {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s, box-shadow 0.3s;
+            background-color: var(--card-bg);
+            z-index: 1;
+            transform-origin: center center;
+        }
+
+        .random-card:hover {
+            transform: scale(1.15);
+            border-color: var(--cyan-highlight);
+            z-index: 99;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+        }
+
+        .random-card-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .random-card-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            display: none;
+        }
+
+        .random-card-badge {
+            position: absolute;
+            top: 6px; left: 6px;
+            background: #ff0055;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 900;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .random-card-icon {
+            position: absolute;
+            bottom: 6px; left: 6px;
+            width: 24px; height: 24px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1.5px solid #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+            z-index: 2;
+        }
+
+        /* MAIN DETAILS LAYOUT */
+        .details-main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .details-main-layout { grid-template-columns: 1fr 300px; }
+        }
+
+        .ads-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: sticky;
+            top: 75px;
+            align-self: start;
+        }
+
+        .ad-box {
+            background-color: var(--secondary-bg);
+            border: 1px dashed var(--border-color);
+            border-radius: 14px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .description-box {
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        .meta-row { display: flex; margin-bottom: 8px; font-size: 14px; }
+        .meta-key { width: 160px; font-weight: 700; }
+        .desc-paragraph { margin-bottom: 12px; }
+        .desc-first-line { display: block; color: #ffffff; font-weight: 800; font-size: 15px; margin-bottom: 4px; }
+        .bold-prefix { color: #ffffff; font-weight: 700; }
+        .highlight-game { color: var(--cyan-highlight); font-weight: 700; }
+        .highlight-dev { color: var(--gold-highlight); font-weight: 700; }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            margin: 15px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .video-container video { width: 100%; height: 100%; object-fit: cover; }
+
+        /* LATEST RELEASED SECTION */
+        .latest-uploads-container {
+            margin-top: 20px;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .latest-uploads-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        @media (min-width: 600px) { .latest-uploads-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* ==================== GAME PLAYER & QUIT DIALOG ==================== */
+        .player-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: #000000;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .player-modal:hover .player-header { opacity: 1; }
+
+        .game-iframe-wrapper {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        iframe { width: 100%; height: 100%; border: none; }
+
+        .quit-dialog-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quit-dialog-box {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            animation: popIn 0.2s ease-out;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quit-dialog-icon {
+            width: 80px; height: 80px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
+        }
+
+        .quit-dialog-actions {
+            display: flex; gap: 12px;
+            width: 100%; margin-top: 8px;
+        }
+
+        .dialog-btn {
+            flex: 1; padding: 12px;
+            border-radius: 10px;
+            font-weight: 700; font-size: 14px;
+            cursor: pointer; border: none;
+            transition: all 0.3s ease;
+        }
+
+        .dialog-btn-yes { background: var(--accent-color); color: #ffffff; }
+        .dialog-btn-no { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-primary); }
+
+        .dialog-btn:hover {
+            transform: scale(1.04);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .site-footer {
+            background-color: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 24px 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-link-btn {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link-btn:hover {
+            color: var(--cyan-highlight);
+        }
+
+        .footer-copyright {
+            color: var(--text-secondary);
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LEFT & RIGHT STICKY ADS (PAGE SCROLL PAR HATEGI NAHI) -->
+    <div class="sticky-side-ad left-sticky-ad">
+        <!-- यहाँ अपना Google AdSense Code (160x600) लगाएँ -->
+        <span>ADVERTISEMENT<br>(160x600 Skyscraper)</span>
+    </div>
+
+    <div class="sticky-side-ad right-sticky-ad">
+        <!-- यहाँ अपना Google AdSense Code (160x600) लगाएँ -->
+        <span>ADVERTISEMENT<br>(160x600 Skyscraper)</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="settings-btn" onclick="toggleSettingsDrawer()" title="Categories & Drawer">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="brand-logo" onclick="showHomeScreen()">
+            <!-- ICON PNG -->
+            <img src="icon.png" alt="Icon" class="brand-icon" onerror="this.src='https://play-lh.googleusercontent.com/upz9iP7qKdGHdrLYgtkq6Dkkj4QQ4m2Pc6x1qU8qn2pMOyLIMP1UJfV-ATLN3JaIwu_HaRXdlpiC1HRBaDRgiw=w240-h480-rw'">
+            <div class="brand-title">
+                <span class="c1">HORROR</span><span class="c2"></span><span class="c3"></span><span class="c4"></span>
+                <span class="hub-text"></span>
+            </div>
+        </div>
+
+        <!-- SEARCH BAR & VIEW TOGGLE -->
+        <div class="search-view-wrapper">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search games..." oninput="handleSearch()">
+            </div>
+            <div class="view-toggle-box">
+                <button class="view-btn" id="btnIconView" onclick="setViewMode('icon')" title="Icon View">
+                    <i class="fa-solid fa-border-all"></i> Icon
+                </button>
+                <button class="view-btn active" id="btnCoverView" onclick="setViewMode('cover')" title="Cover View">
+                    <i class="fa-solid fa-image"></i> Cover
+                </button>
+            </div>
+        </div>
+
+        <!-- NAV RIGHT ACTIONS -->
+        <div class="nav-right-actions">
+            <!-- DESKTOP ACTIONS -->
+            <button class="icon-filter-btn btn-latest" title="Latest Games" onclick="filterByTag('Latest', this)">
+                <i class="fa-solid fa-bolt"></i>
+            </button>
+            <button class="icon-filter-btn btn-popular" title="Popular Games" onclick="filterByTag('Popular', this)">
+                <i class="fa-solid fa-fire"></i>
+            </button>
+            <button class="icon-filter-btn btn-random" title="Random Games" onclick="filterByTag('Random', this)">
+                <i class="fa-solid fa-shuffle"></i>
+            </button>
+            <button class="icon-filter-btn btn-liked" title="Liked Games" onclick="filterByTag('Liked', this)">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+            <button class="icon-filter-btn btn-history" title="History" onclick="filterByTag('History', this)">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </button>
+
+            <!-- PLAY STORE BUTTON -->
+            <button class="playstore-nav-btn" title="Download Apps" onclick="togglePlaystoreModal()">
+                <i class="fa-brands fa-google-play"></i>
+            </button>
+
+            <!-- 5TH BUTTON FOR PAGES POPUP -->
+            <button class="icon-filter-btn btn-pages" title="Website Pages" onclick="togglePagesModal()">
+                <i class="fa-solid fa-layer-group"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- OVERLAY & DRAWERS -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeAllDrawers()"></div>
+
+    <!-- Left Settings Drawer -->
+    <div class="settings-drawer" id="settingsDrawer">
+        <div class="drawer-header">
+            <h3><i class="fa-solid fa-bars"></i> Categories & Menu</h3>
+            <i class="fa-solid fa-xmark close-popup-btn" onclick="closeAllDrawers()"></i>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-number" id="totalGamesCount">0</div>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Total Games Available</div>
+        </div>
+
+        <div>
+            <div style="font-size: 12px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px;">QUICK FILTERS</div>
+            <div class="drawer-actions-grid">
+                <button class="drawer-action-btn" onclick="filterByTag('Latest'); closeAllDrawers();">
+                    <i class="fa-solid fa-bolt btn-latest"></i> Latest
+                </button>
+                <button class="drawer-action-btn" onclick="filterByTag('Popular'); closeAllDrawers();">
+                    <i class="fa-solid fa-fire btn-popular"></i> Popular
+                </button>
+                <button class="drawer-action-btn" onclick="filterByTag('Random'); closeAllDrawers();">
+                    <i class="fa-solid fa-shuffle btn-random"></i> Random
+                </button>
+                <button class="drawer-action-btn" onclick="filterByTag('Liked'); closeAllDrawers();">
+                    <i class="fa-solid fa-heart btn-liked"></i> Liked
+                </button>
+                <button class="drawer-action-btn" onclick="filterByTag('History'); closeAllDrawers();" style="grid-column: span 2;">
+                    <i class="fa-solid fa-clock-rotate-left btn-history"></i> History Games
+                </button>
+            </div>
+        </div>
+
+        <div>
+            <div style="font-size: 12px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px;">ALL CATEGORIES</div>
+            <div class="drawer-category-list" id="drawerCategoryList">
+                <!-- Populated Dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAY STORE CENTER POPUP MODAL -->
+    <div class="playstore-modal" id="playstoreModal" onclick="handleOutsidePlaystoreClick(event)">
+        <div class="playstore-modal-box">
+            <div class="drawer-header">
+                <div>
+                    <h3><i class="fa-brands fa-google-play" style="color: #01d679;"></i> Our Apps</h3>
+                    <div class="playstore-header-subtitle">Discover & download our official Android games and applications!</div>
+                </div>
+                <div class="close-popup-btn" onclick="closePlaystoreModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            
+            <div class="playstore-app-list">
+                <!-- APP 1 -->
+                <div class="playstore-app-card">
+                    <img src="https://play-lh.googleusercontent.com/nWvaTPmKTYNIQKR4D-YsvuQSHsLlRmbCNfGITr9ENLQaxNFcnJQil4UEebn8-hqmJC65MBykVOX1FxYb8Xqr=w240-h480-rw" class="playstore-app-icon" alt="Elky Games App">
+                    <div class="playstore-app-info">
+                        <div class="playstore-app-title">Elky - Online Games Hub</div>
+                        <div class="playstore-app-desc">Welcome to Elky - Online Games 🎮✨ – Your ultimate all-in-one mini games arena! Enjoy a massive collection of fun and exciting online games instantly without wasting your device storage! 📲🚀</div>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.elky" target="_blank" class="playstore-download-btn">
+                        <i class="fa-brands fa-google-play"></i> 
+                    </a>
+                </div>
+                <!-- APP 2 -->
+                <div class="playstore-app-card">
+                    <img src="https://play-lh.googleusercontent.com/upz9iP7qKdGHdrLYgtkq6Dkkj4QQ4m2Pc6x1qU8qn2pMOyLIMP1UJfV-ATLN3JaIwu_HaRXdlpiC1HRBaDRgiw=w240-h480-rw" class="playstore-app-icon" alt="Elky Games App">
+                    <div class="playstore-app-info">
+                        <div class="playstore-app-title">Horror Games Hub</div>
+                        <div class="playstore-app-desc">👻 Welcome to the ultimate mini-game destination! Dive into an exciting collection of thrilling horror challenges, mind-bending puzzles, arcade fun, and casual mini-games—all inside a single app.</div>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.horrorgames" target="_blank" class="playstore-download-btn">
+                        <i class="fa-brands fa-google-play"></i> 
+                    </a>
+                </div>
+                <!-- APP 3 -->
+                <div class="playstore-app-card">
+                    <img src="https://play-lh.googleusercontent.com/wLW4vxejf44PvPQ3iunEPXF3-gnEsHCTcato1BvvQrlVA72bfJnPJ5zgKHlSjUJ1KOMWkC0eTj7LCi5ok6O3b6Y=s256-rw" class="playstore-app-icon" alt="Elky Games App">
+                    <div class="playstore-app-info">
+                        <div class="playstore-app-title">Car Games Hub</div>
+                        <div class="playstore-app-desc">🏁 Welcome to Car Games Hub – The Ultimate Destination for Car Racing & Driving Lovers! 🚗💨</div>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.cargameshub" target="_blank" class="playstore-download-btn">
+                        <i class="fa-brands fa-google-play"></i> 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGES POP-UP MODAL -->
+    <div class="pages-modal" id="pagesModal" onclick="handleOutsideModalClick(event)">
+        <div class="pages-modal-box">
+            <div class="drawer-header">
+                <h3><i class="fa-solid fa-shield-halved" style="color: var(--cyan-highlight);"></i> Website Pages</h3>
+                <div class="close-popup-btn" onclick="closePagesModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="pages-modal-list">
+                <a href="privacy-policy.html" class="pages-modal-item"><i class="fa-solid fa-user-shield"></i> Privacy Policy</a>
+                <a href="terms.html" class="pages-modal-item"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
+                <a href="disclaimer.html" class="pages-modal-item"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer</a>
+                <a href="about.html" class="pages-modal-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                <a href="contact.html" class="pages-modal-item"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        
+        <!-- HOME SCREEN -->
+        <div id="homeScreen">
+            <div class="categories-bar" id="categoriesBar">
+                <button class="category-chip active" onclick="filterByCategory('All', this)">All Games</button>
+            </div>
+
+            <!-- DEFAULT IN COVER MODE -->
+            <div class="games-grid cover-mode" id="gamesGrid">
+                <!-- Dynamic Game Cards -->
+            </div>
+        </div>
+
+        <!-- GAME DETAILS SCREEN (ORIGINAL & UNTOUCHED) -->
+        <div id="detailsScreen" class="details-screen">
+            <button class="back-btn" onclick="showHomeScreen()">
+                <i class="fa-solid fa-arrow-left"></i> Back to Hub
+            </button>
+
+            <!-- TOP FULL WIDTH BANNER SECTION -->
+            <div class="details-top-banner">
+                <div class="hero-purple-box">
+                    <div class="hero-bg-blur" id="heroBgBlur"></div>
+                    <div class="hero-bg-overlay"></div>
+
+                    <div class="hero-cover-frame" id="heroCoverFrame">
+                        <img id="detailCoverImg" class="hero-cover-img" src="" alt="Cover">
+                        <iframe id="heroEmbeddedIframe" class="hero-iframe-embed" src="" allowfullscreen></iframe>
+                        <button class="hero-play-btn" id="heroPlayBtn" onclick="embedPlayGame()">
+                            <i class="fa-solid fa-play"></i> Play
+                        </button>
+                    </div>
+
+                    <!-- BOTTOM STRIP -->
+                    <div class="hero-bottom-info">
+                        <div class="hero-info-left">
+                            <img id="detailIconImg" class="hero-game-avatar" src="" alt="Icon">
+                            <div>
+                                <div id="detailTitle" class="hero-title-text">Game Title</div>
+                                <div id="detailCategory" class="hero-category-text">Category</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-info-right">
+                            <div class="detail-stats-pill">
+                                <i class="fa-solid fa-users" style="color: var(--cyan-highlight);"></i>
+                                <span id="detailPlays">0</span>
+                                <span class="player-text-label"> Players</span>
+                            </div>
+
+                            <button class="detail-action-icon" id="detailLikeBtn" onclick="toggleDetailLike()">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+
+                            <button class="fullscreen-btn-inline" id="detailFullscreenBtn" onclick="toggleEmbedFullScreen()">
+                                <i class="fa-solid fa-expand"></i> <span class="fs-text">Full Screen</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 RELATED GAMES -->
+            <div class="mid-games-wrapper">
+                <div class="mid-games-grid-row1" id="midRandomRow1"></div>
+                <div class="mid-games-grid-row2" id="midRandomRow2"></div>
+            </div>
+
+            <!-- LOWER DETAILS LAYOUT -->
+            <div class="details-main-layout">
+                <div>
+                    <h3>Description</h3>
+                    <div class="description-box" id="detailDescription">
+                        <!-- Formatted Description -->
+                    </div>
+
+                    <!-- LATEST RELEASED GAMES -->
+                    <div class="latest-uploads-container">
+                        <div style="font-size: 15px; font-weight: 800; color: #ffffff; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-bolt" style="color: var(--cyan-highlight);"></i> LATEST RELEASED GAMES
+                        </div>
+                        <div class="latest-uploads-grid" id="latestUploadsGrid">
+                            <!-- Dynamic 8 Latest Cards -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STICKY ADS SIDEBAR -->
+                <div class="ads-sidebar">
+                    <div class="ad-box" id="sidebarAd1">
+                        <span>ADVERTISEMENT (300x250)</span>
+                    </div>
+                    <div class="ad-box" id="sidebarAd2">
+                        <span>ADVERTISEMENT (300x600)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html" class="footer-link-btn">Privacy Policy</a>
+            <a href="terms.html" class="footer-link-btn">Terms & Conditions</a>
+            <a href="disclaimer.html" class="footer-link-btn">Disclaimer</a>
+            <a href="about.html" class="footer-link-btn">About Us</a>
+            <a href="contact.html" class="footer-link-btn">Contact Us</a>
+        </div>
+        <div class="footer-copyright">
+            <img src="icon.png" style="width:18px; height:18px; border-radius:4px;" onerror="this.src='https://play-lh.googleusercontent.com/nWvaTPmKTYNIQKR4D-YsvuQSHsLlRmbCNfGITr9ENLQaxNFcnJQil4UEebn8-hqmJC65MBykVOX1FxYb8Xqr=w240-h480-rw'">
+            <span>&copy; 2026 Elky Games. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <!-- GAME PLAYER MODAL -->
+    <div id="playerModal" class="player-modal">
+        <div class="player-header">
+            <h3 id="playerGameTitle" style="font-size: 14px;">Playing Game</h3>
+            <div style="display: flex; gap: 8px;">
+                <button onclick="toggleFullScreen()" style="background: var(--card-bg); border: 1px solid var(--border-color); color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer;">Fullscreen</button>
+                <button onclick="promptQuitGame()" style="background: var(--accent-color); border: none; color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer;">Close</button>
+            </div>
+        </div>
+        <div class="game-iframe-wrapper">
+            <iframe id="gameIframe" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- QUIT GAME CONFIRMATION -->
+    <div class="quit-dialog-overlay" id="quitDialogOverlay">
+        <div class="quit-dialog-box">
+            <img id="quitGameIcon" class="quit-dialog-icon" src="" alt="Game Icon">
+            <h3 id="quitGameTitle" style="font-size: 18px;">Game Name</h3>
+            <p style="font-size: 14px; color: var(--text-secondary);">Are you sure you want to quit playing this game?</p>
+            <div class="quit-dialog-actions">
+                <button class="dialog-btn dialog-btn-yes" onclick="confirmQuitGame()">Yes, Quit</button>
+                <button class="dialog-btn dialog-btn-no" onclick="cancelQuitGame()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIREBASE SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // ==================== FIREBASE SETUP ====================
+        const firebaseConfig = {
+            apiKey: "AIzaSyDIn8kbpBLBy1S63Qn-I0bTSbciAWJw_Cc",
+            authDomain: "elky-online-games-hub-2.firebaseapp.com",
+            projectId: "elky-online-games-hub-2",
+            storageBucket: "elky-online-games-hub-2.firebasestorage.app",
+            messagingSenderId: "1077582775675",
+            appId: "1:1077582775675:web:f51a721b6cf81dcc01e9de",
+            measurementId: "G-1RZS6REJLD"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // State Variables
+        let allGames = [];
+        let currentlyDisplayedGames = [];
+        let currentGame = null;
+        let currentViewMode = 'cover'; 
+        let selectedCategoryName = 'All';
+        let likedGameIds = JSON.parse(localStorage.getItem('elky_liked_games') || '[]');
+        let historyGameIds = JSON.parse(localStorage.getItem('elky_history_games') || '[]');
+        let savedScrollPosition = 0;
+
+        // LAZY LOADING / SCROLL STATE
+        let loadedItemsCount = 0;
+        const ITEMS_PER_PAGE = 40;
+
+        const badgeColors = ['#FF0055', '#7A00FF', '#00E5FF', '#00FF66', '#FFB703', '#FF007A', '#008F4C', '#D500F9'];
+        const titleColors = {
+            'developer': '#00E5FF', 'publisher': '#52ff97', 'game orientation': '#FFFF9100',
+            'platforms': '#D500F9', 'release date': '#00E676', 'last update': '#1DE9B6',
+            'game engine': '#FF4081', 'supported languages': '#40C4FF', 'other links': '#FFD700',
+            'series': '#FF5252', 'categories': '#52ff97', 'stores': '#fe0000'
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchGamesFromFirestore();
+            setupInfiniteScroll();
+        });
+
+        function fetchGamesFromFirestore() {
+            db.collection('horror_games_hub').onSnapshot(snapshot => {
+                allGames = [];
+                const categoryCounts = {};
+
+                snapshot.docs.forEach((doc, idx) => {
+                    const data = doc.data();
+                    data.id = doc.id;
+                    data.badgeColor = badgeColors[idx % badgeColors.length];
+                    allGames.push(data);
+
+                    if (data.category && data.category.trim() !== '') {
+                        let cat = data.category.trim();
+                        categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+                    }
+                });
+
+                // DATE / TIME SORTING (LATEST ON TOP LOGIC)
+                allGames.sort((a, b) => {
+                    let timeA = a.createdAt ? (a.createdAt.seconds || new Date(a.createdAt).getTime() || 0) : 0;
+                    let timeB = b.createdAt ? (b.createdAt.seconds || new Date(b.createdAt).getTime() || 0) : 0;
+                    return timeB - timeA; // Latest date on top
+                });
+
+                document.getElementById('totalGamesCount').innerText = allGames.length;
+                renderCategoriesBar(Object.keys(categoryCounts));
+                renderDrawerCategories(categoryCounts);
+                currentlyDisplayedGames = [...allGames];
+                
+                resetAndRenderGrid();
+            });
+        }
+
+        // RESET & RENDER INITIAL LAZY LOAD BATCH
+        function resetAndRenderGrid() {
+            loadedItemsCount = 0;
+            document.getElementById('gamesGrid').innerHTML = '';
+            loadMoreGames();
+        }
+
+        // SCROLL LOAD FUNCTION (LAZY LOADING)
+        function loadMoreGames() {
+            if (loadedItemsCount >= currentlyDisplayedGames.length) return;
+
+            const grid = document.getElementById('gamesGrid');
+            const nextBatch = currentlyDisplayedGames.slice(loadedItemsCount, loadedItemsCount + ITEMS_PER_PAGE);
+
+            const isMobile = window.innerWidth <= 600;
+
+            nextBatch.forEach(game => {
+                const isLiked = likedGameIds.includes(game.id);
+                const plays = game.playsCount || 0;
+
+                const displayImg = (currentViewMode === 'cover') 
+                    ? (game.coverUrl || game.imageUrl) 
+                    : (game.imageUrl || game.coverUrl);
+
+                const hasVideo = game.videoUrl && game.videoUrl.trim() !== '';
+
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.onclick = () => openGameDetails(game.id);
+
+                if (currentViewMode === 'cover' && hasVideo) {
+                    card.onmouseenter = () => handleMouseEnterCard(card, game.videoUrl);
+                    card.onmouseleave = () => handleMouseLeaveCard(card);
+                }
+
+                if (isMobile) {
+                    card.innerHTML = `
+                        <div class="card-thumbnail-wrapper">
+                            <img class="card-thumbnail" src="${displayImg}" alt="${game.title}" loading="lazy">
+                            ${hasVideo ? `<video class="card-hover-video" loop muted playsinline></video>` : ''}
+                        </div>
+                        <div class="card-details">
+                            <div class="card-title">${game.title}</div>
+                            <div class="card-submeta">
+                                <span class="card-badge" style="background-color: ${game.badgeColor}">${game.category || 'Game'}</span>
+                                <div class="card-bottom-row-mobile">
+                                    <span class="card-views"><i class="fa-solid fa-users" style="color:var(--cyan-highlight)"></i> ${plays}</span>
+                                    <button class="card-like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike(event, '${game.id}')">
+                                        <i class="fa-${isLiked ? 'solid' : 'regular'} fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    card.innerHTML = `
+                        <div class="card-thumbnail-wrapper">
+                            <img class="card-thumbnail" src="${displayImg}" alt="${game.title}" loading="lazy">
+                            ${hasVideo ? `<video class="card-hover-video" loop muted playsinline></video>` : ''}
+                        </div>
+                        <div class="card-details">
+                            <div class="card-title">${game.title}</div>
+                            <div class="card-submeta">
+                                <span class="card-badge" style="background-color: ${game.badgeColor}">${game.category || 'Game'}</span>
+                                <span class="card-views"><i class="fa-solid fa-users" style="color:var(--cyan-highlight)"></i> ${plays}</span>
+                                <button class="card-like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike(event, '${game.id}')">
+                                    <i class="fa-${isLiked ? 'solid' : 'regular'} fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                grid.appendChild(card);
+            });
+
+            loadedItemsCount += nextBatch.length;
+        }
+
+        // LISTEN FOR PAGE SCROLL
+        function setupInfiniteScroll() {
+            window.addEventListener('scroll', () => {
+                const detailsScreen = document.getElementById('detailsScreen');
+                if (detailsScreen.style.display === 'block') return; // केवल होमस्क्रीन स्क्रोल पर लोड होगा
+
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 400) {
+                    loadMoreGames();
+                }
+            });
+        }
+
+        function renderCategoriesBar(categories) {
+            const container = document.getElementById('categoriesBar');
+            let html = `<button class="category-chip ${selectedCategoryName === 'All' ? 'active' : ''}" onclick="filterByCategory('All', this)">All Games</button>`;
+            categories.forEach(cat => {
+                const isActive = (selectedCategoryName.toLowerCase() === cat.toLowerCase()) ? 'active' : '';
+                html += `<button class="category-chip ${isActive}" onclick="filterByCategory('${cat}', this)">${cat}</button>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderDrawerCategories(countsMap) {
+            const container = document.getElementById('drawerCategoryList');
+            let html = '';
+            for (let cat in countsMap) {
+                const isActive = (selectedCategoryName.toLowerCase() === cat.toLowerCase()) ? 'active-category' : '';
+                html += `
+                    <div class="drawer-category-item ${isActive}" data-cat="${cat}" onclick="filterByCategory('${cat}'); closeAllDrawers();">
+                        <span><i class="fa-solid fa-gamepad" style="color: var(--accent-color); margin-right: 8px;"></i>${cat}</span>
+                        <span class="drawer-category-count">${countsMap[cat]} Games</span>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        function setViewMode(mode) {
+            if (currentViewMode === mode) return;
+            currentViewMode = mode;
+            const grid = document.getElementById('gamesGrid');
+            const btnIcon = document.getElementById('btnIconView');
+            const btnCover = document.getElementById('btnCoverView');
+
+            if (mode === 'cover') {
+                grid.classList.remove('icon-mode');
+                grid.classList.add('cover-mode');
+                btnCover.classList.add('active');
+                btnIcon.classList.remove('active');
+            } else {
+                grid.classList.remove('cover-mode');
+                grid.classList.add('icon-mode');
+                btnIcon.classList.add('active');
+                btnCover.classList.remove('active');
+            }
+            
+            resetAndRenderGrid();
+        }
+
+        function filterByTag(tag, element) {
+            document.querySelectorAll('.icon-filter-btn').forEach(b => b.classList.remove('active'));
+            if (element) element.classList.add('active');
+
+            let filtered = [...allGames];
+            if (tag === 'Latest') {
+                filtered.sort((a, b) => {
+                    let timeA = a.createdAt ? (a.createdAt.seconds || new Date(a.createdAt).getTime() || 0) : 0;
+                    let timeB = b.createdAt ? (b.createdAt.seconds || new Date(b.createdAt).getTime() || 0) : 0;
+                    return timeB - timeA;
+                });
+            }
+            else if (tag === 'Popular') filtered.sort((a, b) => (b.playsCount || 0) - (a.playsCount || 0));
+            else if (tag === 'Random') filtered.sort(() => Math.random() - 0.5);
+            else if (tag === 'Liked') filtered = filtered.filter(g => likedGameIds.includes(g.id));
+            else if (tag === 'History') filtered = filtered.filter(g => historyGameIds.includes(g.id));
+
+            currentlyDisplayedGames = filtered;
+            resetAndRenderGrid();
+        }
+
+        function filterByCategory(category, element) {
+            selectedCategoryName = category;
+
+            document.querySelectorAll('.category-chip').forEach(c => {
+                if (c.innerText.trim().toLowerCase() === category.toLowerCase() || (category === 'All' && c.innerText.includes('All'))) {
+                    c.classList.add('active');
+                } else {
+                    c.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.drawer-category-item').forEach(item => {
+                if (item.getAttribute('data-cat') && item.getAttribute('data-cat').toLowerCase() === category.toLowerCase()) {
+                    item.classList.add('active-category');
+                } else {
+                    item.classList.remove('active-category');
+                }
+            });
+
+            if (category === 'All') {
+                currentlyDisplayedGames = [...allGames];
+            } else {
+                currentlyDisplayedGames = allGames.filter(g => g.category && g.category.trim().toLowerCase() === category.toLowerCase());
+            }
+            resetAndRenderGrid();
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (query === '') {
+                currentlyDisplayedGames = [...allGames];
+            } else {
+                currentlyDisplayedGames = allGames.filter(g => g.title && g.title.toLowerCase().includes(query));
+            }
+            resetAndRenderGrid();
+        }
+
+        function handleMouseEnterCard(cardEl, videoUrl) {
+            if (!videoUrl || videoUrl.trim() === '') return;
+            const videoEl = cardEl.querySelector('.card-hover-video, .random-card-video');
+            if (!videoEl) return;
+
+            videoEl.style.display = 'block';
+            if (!videoEl.src) {
+                videoEl.src = videoUrl.trim();
+            }
+            videoEl.currentTime = 0;
+            videoEl.play().catch(() => {});
+            videoEl.style.opacity = '1';
+        }
+
+        function handleMouseLeaveCard(cardEl) {
+            const videoEl = cardEl.querySelector('.card-hover-video, .random-card-video');
+            if (!videoEl) return;
+
+            videoEl.style.opacity = '0';
+            videoEl.pause();
+        }
+
+        window.addEventListener('resize', () => {
+            resetAndRenderGrid();
+        });
+
+        function toggleLike(event, gameId) {
+            event.stopPropagation();
+            if (likedGameIds.includes(gameId)) {
+                likedGameIds = likedGameIds.filter(id => id !== gameId);
+            } else {
+                likedGameIds.push(gameId);
+            }
+            localStorage.setItem('elky_liked_games', JSON.stringify(likedGameIds));
+            resetAndRenderGrid();
+            updateDetailLikeButton();
+        }
+
+        /* ==================== GAME DETAILS SCREEN (100% UNTOUCHED ORIGINAL) ==================== */
+        function openGameDetails(gameId) {
+            currentGame = allGames.find(g => g.id === gameId);
+            if (!currentGame) return;
+
+            savedScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+            if (!historyGameIds.includes(gameId)) {
+                historyGameIds.unshift(gameId);
+                if (historyGameIds.length > 20) historyGameIds.pop();
+                localStorage.setItem('elky_history_games', JSON.stringify(historyGameIds));
+            }
+
+            document.getElementById('homeScreen').style.display = 'none';
+            document.getElementById('detailsScreen').style.display = 'block';
+
+            document.getElementById('detailTitle').innerText = currentGame.title;
+            document.getElementById('detailCategory').innerText = (currentGame.category || 'Action').toUpperCase();
+            document.getElementById('detailPlays').innerText = `${currentGame.playsCount || 0}`;
+            document.getElementById('detailCoverImg').src = currentGame.coverUrl || currentGame.imageUrl;
+            document.getElementById('detailIconImg').src = currentGame.imageUrl;
+            document.getElementById('heroBgBlur').style.backgroundImage = `url('${currentGame.coverUrl || currentGame.imageUrl}')`;
+
+            const iframe = document.getElementById('heroEmbeddedIframe');
+            const img = document.getElementById('detailCoverImg');
+            const playBtn = document.getElementById('heroPlayBtn');
+            iframe.style.display = 'none';
+            iframe.src = '';
+            img.style.display = 'block';
+            playBtn.style.display = 'flex';
+
+            updateDetailLikeButton();
+            renderMid12RelatedGrid();
+            renderLatestUploadsSection();
+            parseFormattedDescription(currentGame);
+            
+            window.scrollTo(0, 0);
+        }
+
+        function showHomeScreen() {
+            document.getElementById('detailsScreen').style.display = 'none';
+            document.getElementById('homeScreen').style.display = 'block';
+            const iframe = document.getElementById('heroEmbeddedIframe');
+            iframe.src = '';
+            window.scrollTo(0, savedScrollPosition);
+        }
+
+        function embedPlayGame() {
+            if (!currentGame || !currentGame.gameUrl) return;
+
+            db.collection('horror_games_hub').doc(currentGame.id).set({
+                playsCount: firebase.firestore.FieldValue.increment(1)
+            }, { merge: true });
+
+            const iframe = document.getElementById('heroEmbeddedIframe');
+            const img = document.getElementById('detailCoverImg');
+            const playBtn = document.getElementById('heroPlayBtn');
+
+            iframe.src = currentGame.gameUrl;
+            iframe.style.display = 'block';
+            img.style.display = 'none';
+            playBtn.style.display = 'none';
+        }
+
+        function toggleEmbedFullScreen() {
+            const iframe = document.getElementById('heroEmbeddedIframe');
+            if (iframe.style.display === 'block' && iframe.src) {
+                if (iframe.requestFullscreen) iframe.requestFullscreen();
+                else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+            } else {
+                openGamePlayer();
+            }
+        }
+
+        function openGamePlayer() {
+            if (!currentGame || !currentGame.gameUrl) return;
+            document.getElementById('playerGameTitle').innerText = currentGame.title;
+            document.getElementById('gameIframe').src = currentGame.gameUrl;
+            document.getElementById('playerModal').style.display = 'flex';
+
+            db.collection('horror_games_hub').doc(currentGame.id).set({
+                playsCount: firebase.firestore.FieldValue.increment(1)
+            }, { merge: true });
+        }
+
+        function toggleFullScreen() {
+            const iframe = document.getElementById('gameIframe');
+            if (iframe.requestFullscreen) iframe.requestFullscreen();
+            else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+        }
+
+        function promptQuitGame() {
+            if (currentGame) {
+                document.getElementById('quitGameIcon').src = currentGame.imageUrl;
+                document.getElementById('quitGameTitle').innerText = currentGame.title;
+            }
+            document.getElementById('quitDialogOverlay').style.display = 'flex';
+        }
+
+        function confirmQuitGame() {
+            document.getElementById('quitDialogOverlay').style.display = 'none';
+            document.getElementById('playerModal').style.display = 'none';
+            document.getElementById('gameIframe').src = '';
+        }
+
+        function cancelQuitGame() {
+            document.getElementById('quitDialogOverlay').style.display = 'none';
+        }
+
+        function toggleDetailLike() {
+            if (!currentGame) return;
+            toggleLike({ stopPropagation: () => {} }, currentGame.id);
+        }
+
+        function updateDetailLikeButton() {
+            if (!currentGame) return;
+            const btn = document.getElementById('detailLikeBtn');
+            const isLiked = likedGameIds.includes(currentGame.id);
+
+            if (isLiked) {
+                btn.classList.add('liked');
+                btn.innerHTML = '<i class="fa-solid fa-heart"></i>';
+            } else {
+                btn.classList.remove('liked');
+                btn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+            }
+        }
+
+        function renderMid12RelatedGrid() {
+            const row1 = document.getElementById('midRandomRow1');
+            const row2 = document.getElementById('midRandomRow2');
+            row1.innerHTML = ''; row2.innerHTML = '';
+
+            const shuffled = allGames.filter(g => g.id !== currentGame.id).sort(() => Math.random() - 0.5).slice(0, 12);
+
+            shuffled.slice(0, 8).forEach(game => row1.appendChild(createRandomCardElement(game)));
+            shuffled.slice(8, 12).forEach(game => row2.appendChild(createRandomCardElement(game)));
+        }
+
+        function createRandomCardElement(game) {
+            const card = document.createElement('div');
+            card.className = 'random-card';
+            card.onclick = () => openGameDetails(game.id);
+
+            const hasVideo = game.videoUrl && game.videoUrl.trim() !== '';
+            if (hasVideo) {
+                card.onmouseenter = () => handleMouseEnterCard(card, game.videoUrl);
+                card.onmouseleave = () => handleMouseLeaveCard(card);
+            }
+
+            card.innerHTML = `
+                <span class="random-card-badge" style="background-color: ${game.badgeColor}">${game.category || 'Game'}</span>
+                <img class="random-card-img" src="${game.coverUrl || game.imageUrl}" alt="${game.title}" loading="lazy">
+                ${hasVideo ? `<video class="random-card-video" loop muted playsinline></video>` : ''}
+                <img class="random-card-icon" src="${game.imageUrl}" alt="${game.title}">
+            `;
+            return card;
+        }
+
+        function renderLatestUploadsSection() {
+            const grid = document.getElementById('latestUploadsGrid');
+            grid.innerHTML = '';
+
+            const latestList = [...allGames].sort((a, b) => {
+                let timeA = a.createdAt ? (a.createdAt.seconds || new Date(a.createdAt).getTime() || 0) : 0;
+                let timeB = b.createdAt ? (b.createdAt.seconds || new Date(b.createdAt).getTime() || 0) : 0;
+                return timeB - timeA;
+            }).slice(0, 8);
+
+            latestList.forEach(game => {
+                const card = document.createElement('div');
+                card.className = 'random-card';
+                card.onclick = () => openGameDetails(game.id);
+
+                const hasVideo = game.videoUrl && game.videoUrl.trim() !== '';
+                if (hasVideo) {
+                    card.onmouseenter = () => handleMouseEnterCard(card, game.videoUrl);
+                    card.onmouseleave = () => handleMouseLeaveCard(card);
+                }
+
+                card.innerHTML = `
+                    <span class="random-card-badge" style="background-color: ${game.badgeColor}">${game.category || 'Game'}</span>
+                    <img class="random-card-img" src="${game.coverUrl || game.imageUrl}" alt="${game.title}" loading="lazy">
+                    ${hasVideo ? `<video class="random-card-video" loop muted playsinline></video>` : ''}
+                    <img class="random-card-icon" src="${game.imageUrl}" alt="${game.title}">
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function parseFormattedDescription(game) {
+            const box = document.getElementById('detailDescription');
+            box.innerHTML = '';
+
+            let descText = game.description || 'Enjoy playing this awesome web game on Elky Games Hub!';
+
+            const metaList = [
+                { key: 'Developer', val: game.developer || 'Elky Games' },
+                { key: 'Publisher', val: game.publisher || 'Elky Games Hub' },
+                { key: 'Platforms', val: game.platforms || 'Web Browser, Mobile' },
+                { key: 'Release Date', val: game.releaseDate || '2026' }
+            ];
+
+            metaList.forEach(m => {
+                const row = document.createElement('div');
+                row.className = 'meta-row';
+                const keyColor = titleColors[m.key.toLowerCase()] || '#ffffff';
+                row.innerHTML = `<span class="meta-key" style="color:${keyColor};">${m.key}:</span> <span>${m.val}</span>`;
+                box.appendChild(row);
+            });
+
+            const p = document.createElement('p');
+            p.className = 'desc-paragraph';
+            p.style.marginTop = '15px';
+            p.innerHTML = descText.replace(/\n/g, '<br>');
+            box.appendChild(p);
+        }
+
+        /* DRAWER & MODAL TOGGLES */
+        function toggleSettingsDrawer() {
+            document.getElementById('settingsDrawer').classList.toggle('open');
+            document.getElementById('drawerOverlay').style.display = 
+                document.getElementById('settingsDrawer').classList.contains('open') ? 'block' : 'none';
+        }
+
+        function closeAllDrawers() {
+            document.getElementById('settingsDrawer').classList.remove('open');
+            document.getElementById('drawerOverlay').style.display = 'none';
+        }
+
+        function togglePlaystoreModal() {
+            const modal = document.getElementById('playstoreModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closePlaystoreModal() {
+            document.getElementById('playstoreModal').style.display = 'none';
+        }
+
+        function handleOutsidePlaystoreClick(e) {
+            if (e.target.id === 'playstoreModal') closePlaystoreModal();
+        }
+
+        function togglePagesModal() {
+            const modal = document.getElementById('pagesModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closePagesModal() {
+            document.getElementById('pagesModal').style.display = 'none';
+        }
+
+        function handleOutsideModalClick(e) {
+            if (e.target.id === 'pagesModal') closePagesModal();
+        }
+    </script>
+</body>
+</html>
