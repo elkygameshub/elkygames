@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO METADATA & FAVICON -->
-<title>Free Online Games For PC on ElkyGames | Play Now!</title>
-<meta name="description" content="Play 2000+ free online web games on Elky Games Hub! Enjoy action, horror, arcade, puzzle, racing, and HTML5 games instantly on mobile & PC. No downloads, no installation — start playing now!">
-<meta name="keywords" content="Elky Games, Elky Games Hub, elkygames.com, Free Online Games, Web Games, Play Free Games, HTML5 Games, Arcade Games, Action Games, Puzzle Games, Mobile Games, Online Gaming Hub, Browser Games, Instant Play Games, Best Casual Games, Free Web Games Online, Fun Arcade Games, Strategy Games, Kids Games, Board Games, Adventure Games, Racing Games, Sports Games, Horror Games, Unblocked Games">
+<!-- SEO METADATA & FAVICON -->
+<title>Free Online Car Games For PC - Play Racing, Driving & Stunt Browser Games | Elky Games</title>
+<meta name="description" content="Play the best free online car games on Elky Games Hub! Experience high-speed racing, 3D city driving, drift challenges, and extreme car stunts in HTML5 browser games. Instant play on mobile & PC — no downloads required!">
+<meta name="keywords" content="Elky Games Car Games, Free Car Games, Racing Online Games, 3D Driving Games, Play Car Games, Browser Racing Games, Drift Games, Extreme Car Stunts, Speed Racing Online, Unblocked Car Games, City Driving Games, Parking Simulator Games, Highway Racer Games, Online Supercar Games, Mobile Car Games, Action Racing Games, Instant Car Games">
 
-<!-- Open Graph / Social Media Tags (For Facebook, WhatsApp, LinkedIn) -->
+<!-- Open Graph / Social Media Tags -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Elky Games - Free Online Web & Mobile Games Hub">
-<meta property="og:description" content="Discover thousands of instant-play HTML5 games! Action, horror, puzzle, racing, and arcade games ready to play on any device with no installs.">
-<meta property="og:url" content="https://elkygames.com/">
+<meta property="og:title" content="Play Free Online Car Games For PC | Elky Games Hub">
+<meta property="og:description" content="Get behind the wheel with the best free online HTML5 car games. High-speed racing, drifting, and exciting driving games ready for instant play!">
+<meta property="og:url" content="https://elkygames.com/car-games">
 <meta property="og:site_name" content="Elky Games">
 
 <!-- Twitter Card Metadata -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Elky Games Hub - Play Free Online Games instantly">
-<meta name="twitter:description" content="Explore and play top-rated free web and mobile games instantly. Action, puzzles, arcade, horror, and more with zero downloads!">
-    
-    <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/nWvaTPmKTYNIQKR4D-YsvuQSHsLlRmbCNfGITr9ENLQaxNFcnJQil4UEebn8-hqmJC65MBykVOX1FxYb8Xqr=w240-h480-rw">
+<meta name="twitter:title" content="Best Free Online Car Games For PC - Elky Games">
+<meta name="twitter:description" content="Test your speed with top HTML5 car racing games, drift challenges, and driving adventures. No installation needed!">
+
+
+    <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/wLW4vxejf44PvPQ3iunEPXF3-gnEsHCTcato1BvvQrlVA72bfJnPJ5zgKHlSjUJ1KOMWkC0eTj7LCi5ok6O3b6Y=w240-h480-rw">
 
    <script type="application/ld+json">
 {
@@ -76,7 +77,7 @@
 
         body {
             background-color: var(--primary-bg); 
-            background-image: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.85)), url('https://i.pinimg.com/originals/b3/52/c1/b352c12ea6df6fc4175498f0eca8bac8.jpg');
+            background-image: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.85)), url('https://images.stopgame.ru/screenshots/46070/grid_legends_winter_bash-10.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1540,9 +1541,9 @@
 
         <div class="brand-logo" onclick="showHomeScreen()">
             <!-- ICON PNG -->
-            <img src="icon.png" alt="Icon" class="brand-icon" onerror="this.src='https://play-lh.googleusercontent.com/nWvaTPmKTYNIQKR4D-YsvuQSHsLlRmbCNfGITr9ENLQaxNFcnJQil4UEebn8-hqmJC65MBykVOX1FxYb8Xqr=w240-h480-rw'">
+            <img src="icon.png" alt="Icon" class="brand-icon" onerror="this.src='https://play-lh.googleusercontent.com/wLW4vxejf44PvPQ3iunEPXF3-gnEsHCTcato1BvvQrlVA72bfJnPJ5zgKHlSjUJ1KOMWkC0eTj7LCi5ok6O3b6Y=w240-h480-rw'">
             <div class="brand-title">
-                <span class="c1">E</span><span class="c2">l</span><span class="c3">k</span><span class="c4">y</span>
+                <span class="c1">C</span><span class="c2"></span><span class="c3">a</span><span class="c4">r</span>
                 <span class="hub-text"></span>
             </div>
         </div>
@@ -1901,7 +1902,7 @@
         });
 
         function fetchGamesFromFirestore() {
-            db.collection('games').onSnapshot(snapshot => {
+            db.collection('car_games_hub').onSnapshot(snapshot => {
                 allGames = [];
                 const categoryCounts = {};
 
@@ -2217,7 +2218,7 @@
         function embedPlayGame() {
             if (!currentGame || !currentGame.gameUrl) return;
 
-            db.collection('games').doc(currentGame.id).set({
+            db.collection('car_games_hub').doc(currentGame.id).set({
                 playsCount: firebase.firestore.FieldValue.increment(1)
             }, { merge: true });
 
@@ -2247,7 +2248,7 @@
             document.getElementById('gameIframe').src = currentGame.gameUrl;
             document.getElementById('playerModal').style.display = 'flex';
 
-            db.collection('games').doc(currentGame.id).set({
+            db.collection('car_games_hub').doc(currentGame.id).set({
                 playsCount: firebase.firestore.FieldValue.increment(1)
             }, { merge: true });
         }

@@ -1,33 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
     <url>
-        <loc>https://elky.netlify.app/</loc>
+        <loc>https://elkygames.com/</loc>
+        <lastmod>2026-08-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- Game Categories (High SEO Importance) -->
     <url>
-        <loc>https://elky.netlify.app/privacy-policy</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
+        <loc>https://elkygames.com/horror-games</loc>
+        <lastmod>2026-08-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://elky.netlify.app/terms</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
+        <loc>https://elkygames.com/car-games</loc>
+        <lastmod>2026-08-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
+
+    <!-- Important Utility Pages -->
     <url>
-        <loc>https://elky.netlify.app/disclaimer</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://elky.netlify.app/about</loc>
+        <loc>https://elkygames.com/about</loc>
+        <lastmod>2026-08-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://elky.netlify.app/contact</loc>
+        <loc>https://elkygames.com/contact</loc>
+        <lastmod>2026-08-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+
+    <!-- Policy & Legal Pages -->
+    <url>
+        <loc>https://elkygames.com/privacy-policy</loc>
+        <lastmod>2026-08-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://elkygames.com/terms</loc>
+        <lastmod>2026-08-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://elkygames.com/disclaimer</loc>
+        <lastmod>2026-08-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>
